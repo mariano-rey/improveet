@@ -1,0 +1,15 @@
+{
+  "name": "improveet-container",
+  "version": "0.0.1",
+  "description": "Improveet Container",
+  "scripts": {
+    "docker:build": "docker-build",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs --follow",
+    "docker:dev": "docker-compose up -d --build",
+    "docker:test": "docker-compose --env-file ./.env.test -f docker-compose.yml -f docker-compose.test.yml -d --build",
+    "docker:prod": "docker-compose --env-file ./.env.production -f docker-compose.yml -f docker-compose.prod.yml -d --build"
+  },
+  "author": "Open Source",
+  "license": "MIT"
+}

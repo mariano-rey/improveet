@@ -1,0 +1,21 @@
+version: "3.3"
+services:
+  frontend:
+    container_name: ${COMPOSE_PROJECT_NAME}-frontend
+    build: ./frontend
+
+    networks:
+      - ${COMPOSE_PROJECT_NAME}-net
+
+  backend:
+    container_name: ${COMPOSE_PROJECT_NAME}-backend
+    build: ./backend
+
+    networks:
+      - ${COMPOSE_PROJECT_NAME}-net
+
+    depends_on:
+      - frontend
+
+networks:
+  improveet-net:
